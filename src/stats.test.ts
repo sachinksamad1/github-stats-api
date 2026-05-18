@@ -12,9 +12,7 @@ const mockUser: GitHubUser = {
   created_at: "2020-01-15T00:00:00Z",
 };
 
-function makeRepo(
-  overrides: Partial<GitHubRepo> = {}
-): GitHubRepo {
+function makeRepo(overrides: Partial<GitHubRepo> = {}): GitHubRepo {
   return {
     name: "repo",
     stargazers_count: 0,

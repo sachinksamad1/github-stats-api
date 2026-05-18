@@ -71,7 +71,7 @@ describe("generateSVG", () => {
       ...mockStats,
       mostStarredRepo: {
         ...mockStats.mostStarredRepo!,
-        name: 'repo&<script>',
+        name: "repo&<script>",
       },
     };
     const svg = generateSVG("testuser", evilStats, mockTheme);
@@ -95,6 +95,14 @@ describe("generateSVG", () => {
     const svg = generateSVG("testuser", mockStats, mockTheme);
     expect(svg).toContain("TypeScript");
     expect(svg).toContain("5 repos");
+  });
+
+  it("uses valid XML entities for bullet and star", () => {
+    const svg = generateSVG("testuser", mockStats, mockTheme);
+    expect(svg).toContain("&#8226;");
+    expect(svg).toContain("&#9733;");
+    expect(svg).not.toContain("&bull;");
+    expect(svg).not.toContain("&star;");
   });
 });
 
@@ -130,7 +138,7 @@ describe("generateCompactSVG", () => {
   it("escapes XML in compact view", () => {
     const evilStats = {
       ...mockStats,
-      name: '<evil>name</evil>',
+      name: "<evil>name</evil>",
     };
     const svg = generateCompactSVG("testuser", evilStats, mockTheme);
     expect(svg).toContain("&lt;evil&gt;");

@@ -41,7 +41,7 @@ export function generateSVG(
   <text x="35" y="235" class="title-small">Most Starred Repository</text>
   <text x="35" y="255" class="text-bold">${escapeXml(stats.mostStarredRepo.name)}</text>
   <text x="35" y="270" class="text-small">${escapeXml((stats.mostStarredRepo.description || "No description").substring(0, 60))}${(stats.mostStarredRepo.description?.length || 0) > 60 ? "..." : ""}</text>
-  <text x="340" y="255" class="text">&star; ${stats.mostStarredRepo.stargazers_count}</text>
+  <text x="340" y="255" class="text">&#9733; ${stats.mostStarredRepo.stargazers_count}</text>
   `
     : "";
 
@@ -51,7 +51,7 @@ export function generateSVG(
   <rect width="100%" height="100%" fill="${theme.bg}" rx="12" stroke="${theme.border}"/>
 
   <text x="20" y="35" class="title">${safeName}'s Stats</text>
-  <text x="20" y="55" class="text-small">@${safeUsername} &bull; Joined ${stats.joined}</text>
+  <text x="20" y="55" class="text-small">@${safeUsername} &#8226; Joined ${stats.joined}</text>
 
   <g transform="translate(20, 80)">
     <text x="0" y="0" class="text">Repos: ${stats.totalRepos}</text>

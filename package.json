@@ -25,9 +25,17 @@
     "api",
     "typescript"
   ],
-  "author": "",
+  "author": "Sachin K Samad",
   "license": "MIT",
   "type": "module",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sachinksamad1/github-stats-api.git"
+  },
+  "bugs": {
+    "url": "https://github.com/sachinksamad1/github-stats-api/issues"
+  },
+  "homepage": "https://github.com/sachinksamad1/github-stats-api#readme",
   "dependencies": {
     "express": "^5.2.1"
   },

@@ -1,5 +1,8 @@
 # GitHub Stats API
 
+[![CI](https://github.com/sachinksamad1/github-stats-api/actions/workflows/ci.yml/badge.svg)](https://github.com/sachinksamad1/github-stats-api/actions/workflows/ci.yml)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+
 A fast, customizable, and developer-friendly **TypeScript API** that generates dynamic SVG GitHub stats — designed for reliability, extensibility, and clean architecture.
 
 > Built for developers who want control — not dependency on fragile third-party deployments.
@@ -66,12 +69,12 @@ This project solves that by giving you:
 Request → GitHub API → Stats Engine → SVG Renderer → Response
 ```
 
-| Layer | Responsibility |
-| ----------- | -------------------- |
-| `types.ts` | Shared types & error classes |
-| `github.ts` | Fetch GitHub data (with pagination & timeout) |
-| `stats.ts` | Aggregate & compute |
-| `svg.ts` | Render visual output (with XML escaping) |
+| Layer       | Responsibility                                   |
+| ----------- | ------------------------------------------------ |
+| `types.ts`  | Shared types & error classes                     |
+| `github.ts` | Fetch GitHub data (with pagination & timeout)    |
+| `stats.ts`  | Aggregate & compute                              |
+| `svg.ts`    | Render visual output (with XML escaping)         |
 | `server.ts` | API interface (validation, error handling, CORS) |
 
 ---
@@ -84,27 +87,27 @@ Returns an SVG image with GitHub stats.
 
 **Query Parameters**
 
-| Param | Type | Default | Description |
-| ----- | ---- | ------- | ----------- |
-| `username` | `string` | — | GitHub username (required, validated) |
-| `theme` | `string` | `github` | Theme name: `github`, `ocean`, `forest`, `sunset`, `dracula` |
-| `layout` | `string` | `default` | Layout: `default` or `compact` |
-| `bg` | `string` | theme | Background color (hex, with or without `#`) |
-| `border` | `string` | theme | Card border color |
-| `title` | `string` | theme | Heading color |
-| `text` | `string` | theme | Main text color |
-| `accent` | `string` | theme | Secondary text color |
-| `card` | `string` | theme | Highlight card color |
+| Param      | Type     | Default   | Description                                                  |
+| ---------- | -------- | --------- | ------------------------------------------------------------ |
+| `username` | `string` | —         | GitHub username (required, validated)                        |
+| `theme`    | `string` | `github`  | Theme name: `github`, `ocean`, `forest`, `sunset`, `dracula` |
+| `layout`   | `string` | `default` | Layout: `default` or `compact`                               |
+| `bg`       | `string` | theme     | Background color (hex, with or without `#`)                  |
+| `border`   | `string` | theme     | Card border color                                            |
+| `title`    | `string` | theme     | Heading color                                                |
+| `text`     | `string` | theme     | Main text color                                              |
+| `accent`   | `string` | theme     | Secondary text color                                         |
+| `card`     | `string` | theme     | Highlight card color                                         |
 
 **Error Responses**
 
-| Status | Meaning |
-| ------ | ------- |
-| `400` | Missing or invalid `username` parameter |
-| `401` | GitHub token is unauthorized |
-| `404` | GitHub user not found |
-| `429` | GitHub API rate limit exceeded |
-| `500` | Unexpected server error |
+| Status | Meaning                                 |
+| ------ | --------------------------------------- |
+| `400`  | Missing or invalid `username` parameter |
+| `401`  | GitHub token is unauthorized            |
+| `404`  | GitHub user not found                   |
+| `429`  | GitHub API rate limit exceeded          |
+| `500`  | Unexpected server error                 |
 
 **Examples**
 
@@ -279,33 +282,7 @@ src/svg.ts
 
 ## Contributing
 
-Contributions are welcome — especially thoughtful ones.
-
-### Before submitting PR
-
-- Keep functions pure where possible
-- Maintain separation of concerns
-- Avoid unnecessary dependencies
-- Prefer native APIs (e.g., `fetch`)
-- Add tests for new functionality
-
-### Development Workflow
-
-```bash
-git checkout -b feat/your-feature
-npm run dev
-npm test        # Run tests
-npm run format  # Format files with Prettier
-npm run lint    # Lint files with ESLint
-```
-
-### Commit Convention
-
-```text
-feat: add language weighting
-fix: handle null repo language
-refactor: split svg renderer
-```
+Contributions are welcome! Please read our [Contributing Guide](CONTRIBUTING.md) to learn about our development process, how to propose bugfixes and improvements, and how to build and test your changes.
 
 ---
 
